@@ -104,5 +104,7 @@ void			ft_displaytab(char **tab);
 char			*ft_tabjoin(const char **tab);
 char			*ft_strndup(char *s1, int n);
 int				ft_lstlen(t_tetri **list);
+char			*ft_strrev(char *str);
+void			ft_putnbru(unsigned int n);
 
 #endif

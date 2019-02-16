@@ -6,7 +6,7 @@
 #    By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/11 12:07:01 by kemethen          #+#    #+#              #
-#    Updated: 2019/01/25 14:16:02 by kemethen         ###   ########.fr        #
+#    Updated: 2019/02/16 19:31:43 by kemethen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,9 @@ SRC = ft_memset.c \
 	ft_displaytab.c \
 	ft_tabjoin.c \
 	ft_strndup.c \
-	ft_lstlen.c
+	ft_lstlen.c \
+	ft_strrev.c \
+	ft_putnbru.c
 
 OBJ = $(subst srcs/, ,$(SRC:.c=.o))
 
