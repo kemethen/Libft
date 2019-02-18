@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 12:19:57 by kemethen          #+#    #+#             */
-/*   Updated: 2019/02/16 12:30:48 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/02/18 16:32:48 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 char	*ft_strrev(char *str)
 {
-	char	*s2;
+	char	tmp;
 	size_t	i;
+	size_t	j;
 
-	s2 = ft_strnew(ft_strlen(str));
 	i = 0;
-	while (i < ft_strlen(str))
+	j = ft_strlen(str) - 1;
+	while (i < j)
 	{
-		s2[i] = str[ft_strlen(str) - i - 1];
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
 		++i;
+		--j;
 	}
-	return (s2);
+	return (str);
 }
