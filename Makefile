@@ -81,7 +81,8 @@ SRC = ft_memset.c \
 	ft_putnbru.c \
 	ft_putnbrs.c \
 	ft_putnbrus.c \
-	ft_putnbruc.c
+	ft_putnbruc.c \
+	ft_putnbrc.c
 
 OBJ = $(subst srcs/, ,$(SRC:.c=.o))
 

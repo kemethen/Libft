@@ -109,5 +109,6 @@ void			ft_putnbru(unsigned int n);
 void			ft_putnbrs(short n);
 void			ft_putnbrus(unsigned short n);
 void 			ft_putnbruc(unsigned char c);
+void			ft_putnbrc(char c);
 
 #endif
