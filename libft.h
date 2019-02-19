@@ -106,5 +106,8 @@ char			*ft_strndup(char *s1, int n);
 int				ft_lstlen(t_tetri **list);
 char			*ft_strrev(char *str);
 void			ft_putnbru(unsigned int n);
+void			ft_putnbrs(short n);
+void			ft_putnbrus(unsigned short n);
+void 			ft_putnbruc(unsigned char c);
 
 #endif

@@ -30,9 +30,9 @@ int		ft_atoi(const char *str)
 	while ((str[i] >= 48) && (str[i] <= 57))
 	{
 		nbr = nbr * 10 + str[i] - 48;
-		if (negatif == 0 && nbr > INT64_MAX)
+		if (negatif == 0 && nbr > __INT64_MAX__)
 			return (-1);
-		if (negatif == 1 && nbr > (size_t)(INT64_MAX) + 1)
+		if (negatif == 1 && nbr > (size_t)(__INT64_MAX__) + 1)
 			return (0);
 		i++;
 	}

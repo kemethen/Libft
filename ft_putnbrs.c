@@ -14,7 +14,17 @@
 
 void	ft_putnbrs(short n)
 {
+	if (n == -32768)
+	{
+		ft_putstr("-32768");
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
 	if (n >= 10)
-		ft_putnbr(n / 10);
+		ft_putnbrs(n / 10);
 	ft_putchar(n % 10 + 48);
 }

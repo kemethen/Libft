@@ -15,6 +15,6 @@
 void	ft_putnbru(unsigned int n)
 {
 	if (n >= 10)
-		ft_putnbr(n / 10);
+		ft_putnbru(n / 10);
 	ft_putchar(n % 10 + 48);
 }

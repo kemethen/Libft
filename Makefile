@@ -78,11 +78,14 @@ SRC = ft_memset.c \
 	ft_strndup.c \
 	ft_lstlen.c \
 	ft_strrev.c \
-	ft_putnbru.c
+	ft_putnbru.c \
+	ft_putnbrs.c \
+	ft_putnbrus.c \
+	ft_putnbruc.c
 
 OBJ = $(subst srcs/, ,$(SRC:.c=.o))
 
-HEAD = libft.h
+HEAD = .
 
 all:  $(NAME)
 
