@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbrc.c                                       :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 10:00:09 by kemethen          #+#    #+#             */
-/*   Updated: 2019/02/21 10:00:10 by kemethen         ###   ########.fr       */
+/*   Created: 2019/02/27 18:19:39 by kemethen          #+#    #+#             */
+/*   Updated: 2019/02/27 18:51:23 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbrc(char c)
+static int		ft_len(unsigned int n)
 {
-	if (c == -128)
+	unsigned int	nbr;
+	int				i;
+
+	nbr = n;
+	i = 0;
+	if (nbr == 0)
+		return (1);
+	while (nbr != 0)
 	{
-		ft_putstr("-128");
-		return ;
+		++i;
+		nbr = nbr / 10;
 	}
-	if (c < 0)
+	return (i);
+}
+
+char			*ft_uitoa(unsigned int n)
+{
+	unsigned int	nbr;
+	int				i;
+	char			*result;
+
+	nbr = n;
+	i = 0;
+	result = ft_strnew(ft_len(n));
+	while (i < ft_len(n))
 	{
-		ft_putchar('-');
-		c = -c;
+		result[ft_len(n) - i - 1] = (nbr % 10) + '0';
+		nbr = nbr / 10;
+		++i;
 	}
-	if (c >= 10)
-		ft_putnbrc(c / 10);
-	ft_putchar(c % 10 + 48);
+	return (result);
 }

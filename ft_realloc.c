@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbrc.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 10:00:09 by kemethen          #+#    #+#             */
-/*   Updated: 2019/02/21 10:00:10 by kemethen         ###   ########.fr       */
+/*   Created: 2019/02/26 10:15:29 by kemethen          #+#    #+#             */
+/*   Updated: 2019/02/26 10:17:31 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbrc(char c)
+char	*ft_realloc(char *str, size_t size)
 {
-	if (c == -128)
-	{
-		ft_putstr("-128");
-		return ;
-	}
-	if (c < 0)
-	{
-		ft_putchar('-');
-		c = -c;
-	}
-	if (c >= 10)
-		ft_putnbrc(c / 10);
-	ft_putchar(c % 10 + 48);
+	char	*tmp;
+
+	tmp = ft_strnew(ft_strlen(str) + size);
+	tmp = ft_strcpy(tmp, str);
+	free(str);
+	return (tmp);
 }

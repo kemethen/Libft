@@ -1,12 +1,12 @@
-/************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/11 14:52:43 by kemethen          #+#    #+#             */
-/*   Updated: 2019/01/25 14:41:39 by kemethen         ###   ########.fr       */
+/*   Created: 2019/02/21 10:02:24 by kemethen          #+#    #+#             */
+/*   Updated: 2019/02/27 18:25:36 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,21 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "../srcs/ft_printf.h"
 
-typedef struct s_case
+typedef struct	s_case
 {
-		short x;
-		short y;
+	short	x;
+	short	y;
 }				t_case;
 typedef struct	s_tetri
 {
-		t_case a;
-		t_case b;
-		t_case c;
-		t_case d;
-		struct s_tetri *next;
-		struct s_tetri *prev;
+	t_case			a;
+	t_case			b;
+	t_case			c;
+	t_case			d;
+	struct s_tetri	*next;
+	struct s_tetri	*prev;
 }				t_tetri;
 
 typedef struct	s_list
@@ -108,10 +109,13 @@ char			*ft_strrev(char *str);
 void			ft_putnbru(unsigned int n);
 void			ft_putnbrs(short n);
 void			ft_putnbrus(unsigned short n);
-void 			ft_putnbruc(unsigned char c);
+void			ft_putnbruc(unsigned char c);
 void			ft_putnbrc(char c);
 void			ft_putnbrl(long int n);
 void			ft_putnbrul(unsigned long n);
-void 			ft_putnbrll(long long int n);
+void			ft_putnbrll(long long int n);
+char			*ft_realloc(char *str, size_t size);
+char			*ft_ultoa(unsigned long n);
+char			*ft_uitoa(unsigned int n);
 
 #endif

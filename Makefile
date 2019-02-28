@@ -6,13 +6,19 @@
 #    By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/11 12:07:01 by kemethen          #+#    #+#              #
-#    Updated: 2019/02/16 19:31:43 by kemethen         ###   ########.fr        #
+#    Updated: 2019/02/27 18:20:44 by kemethen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME	= libft.a
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
+OBJDIR	= obj
+AR		= ar
+ARFLAGS	= -rcs
+HEAD	= libft.h
 
-SRC = ft_memset.c \
+SRC		= ft_memset.c \
 	ft_bzero.c \
 	ft_memcpy.c \
 	ft_memccpy.c \
@@ -85,23 +91,46 @@ SRC = ft_memset.c \
 	ft_putnbrc.c \
 	ft_putnbrl.c \
 	ft_putnbrul.c \
-	ft_putnbrll.c
+	ft_putnbrll.c \
+	ft_realloc.c \
+	ft_ultoa.c \
+	ft_uitoa.c
 
-OBJ = $(subst srcs/, ,$(SRC:.c=.o))
+OBJ		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 
-HEAD = .
+GREEN	= \033[1;32m
+PURPLE	= \033[1;35m
+RED		= \033[1;31m
+YELLOW	= \033[1;33m
+BLUE	= \033[1;36m
+WHITE	= \033[1;37m
 
-all:  $(NAME)
+all: $(NAME)
 
-$(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEAD)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJ)
+	@echo "\n$(YELLOW)$@ \t$(PURPLE)must be updated with $(WHITE)$(notdir $?)"
+	@echo "$(PURPLE)Updating\t$(YELLOW)$@"
+	@$(AR) $(ARFLAGS) $@ $?
+	@echo "$@ :\t$(GREEN)Indexed / Up to date"
+
+$(OBJDIR)/%.o: %.c $(HEAD)
+	@echo "$(PURPLE)Updating\t$(WHITE)$@"
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+$(OBJ): | $(OBJDIR)
+
+$(OBJDIR):
+	@echo "$(GREEN)Creating\t$(WHITE)directory $(BLUE)'$@'\n"
+	@mkdir $@
 
 clean:
-	rm -f $(OBJ)
+	@echo "$(RED)Deleting\t$(WHITE)directory $(BLUE)'$(OBJDIR)'"
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "$(RED)Deleting\t$(YELLOW)$(NAME)\n"
+	@rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

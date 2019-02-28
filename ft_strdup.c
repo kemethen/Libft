@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 18:41:01 by kemethen          #+#    #+#             */
-/*   Updated: 2018/11/21 13:28:36 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/02/27 19:19:51 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	if (!(dest = (char *)malloc(ft_strlen(s1) + 1)))
-		return (NULL);
-	while (s1[i] != '\0')
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	dest = ft_strnew(ft_strlen(s1));
+	return (ft_strcpy(dest, s1));
 }
