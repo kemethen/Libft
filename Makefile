@@ -6,7 +6,7 @@
 #    By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/11 12:07:01 by kemethen          #+#    #+#              #
-#    Updated: 2019/02/27 18:20:44 by kemethen         ###   ########.fr        #
+#    Updated: 2019/03/02 14:54:59 by kemethen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,8 @@ SRC		= ft_memset.c \
 	ft_putnbrll.c \
 	ft_realloc.c \
 	ft_ultoa.c \
-	ft_uitoa.c
+	ft_uitoa.c \
+	ft_lltoa.c
 
 OBJ		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 

@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 10:02:24 by kemethen          #+#    #+#             */
-/*   Updated: 2019/02/27 18:25:36 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/03/02 14:54:56 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,5 +117,6 @@ void			ft_putnbrll(long long int n);
 char			*ft_realloc(char *str, size_t size);
 char			*ft_ultoa(unsigned long n);
 char			*ft_uitoa(unsigned int n);
+char			*ft_lltoa(long long n);
 
 #endif

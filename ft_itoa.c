@@ -6,39 +6,33 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 12:32:20 by kemethen          #+#    #+#             */
-/*   Updated: 2018/11/16 13:12:17 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/03/02 14:46:51 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_result(char *result, long int nbr, int n)
+static int		ft_len(int long n)
 {
-	if (n < 0)
-		result[1] = nbr + '0';
-	else
-		result[0] = nbr + '0';
-	return (result);
-}
-
-static int		ft_len(int n)
-{
-	long int	nbr;
 	int			i;
 
-	nbr = n;
 	i = 0;
-	if (nbr < 0)
-		nbr = nbr * -1;
-	while (nbr / 10 > 9)
-	{
-		i++;
-		nbr = nbr / 10;
-	}
+	if (n == 0)
+		return (1);
 	if (n < 0)
-		return (i + 2);
-	else
-		return (i + 1);
+		n = -n;
+	while (n != 0)
+	{
+		++i;
+		n /= 10;
+	}
+	return (i);
+}
+
+char			*nzero(char *str)
+{
+	str[0] = '0';
+	return (str);
 }
 
 char			*ft_itoa(int n)
@@ -49,23 +43,22 @@ char			*ft_itoa(int n)
 	char		*result;
 
 	nbr = n;
-	neg = 0;
 	i = 0;
-	neg = (nbr < 0) ? -1 : 0;
-	if (!(result = (char *)malloc(sizeof(char) * ft_len(n) + 1 - neg)))
-		return (NULL);
+	neg = (nbr < 0) ? 1 : 0;
+	result = ft_strnew((size_t)ft_len(nbr) + neg);
 	if (nbr < 0)
 	{
-		nbr = nbr * -1;
-		result[i] = '-';
-		i++;
+		nbr = -nbr;
+		result[0] = '-';
+		++i;
 	}
-	while ((ft_len(n) - i) > 0 && n != 0 && nbr > 9)
+	if (n == 0)
+		return (nzero(result));
+	while (nbr != 0)
 	{
-		result[ft_len(n) - i - neg] = (nbr % 10) + '0';
-		nbr = nbr / 10;
-		i++;
+		result[ft_len(n) - i + neg - 1] = (nbr % 10) + '0';
+		nbr /= 10;
+		++i;
 	}
-	result[ft_len(n) + 1] = '\0';
-	return (ft_result(result, nbr, n));
+	return (result);
 }
