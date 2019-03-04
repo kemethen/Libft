@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 10:02:24 by kemethen          #+#    #+#             */
-/*   Updated: 2019/03/02 14:54:56 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/03/04 17:24:33 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "../srcs/ft_printf.h"
 
 typedef struct	s_case
 {
