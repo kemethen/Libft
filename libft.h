@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 10:02:24 by kemethen          #+#    #+#             */
-/*   Updated: 2019/03/04 17:24:33 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/04/23 15:56:52 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *st, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstpush(t_list **alst, t_list *new);
-void			ft_doop(int a, char op, int b);
+void			ft_doop(long long a, char op, long long b);
 void			ft_printlist(const t_list *list);
 void			ft_displaytab(char **tab);
 char			*ft_tabjoin(const char **tab);

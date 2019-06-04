@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/02 14:52:55 by kemethen          #+#    #+#             */
-/*   Updated: 2019/03/02 14:55:57 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/04/23 16:11:31 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,19 @@ static int		ft_len(long long n)
 	return (i);
 }
 
-char			*nzero_ll(char *str)
+char			*nzero_ll(char *str, long long n)
 {
-	str[0] = '0';
-	return (str);
+	if (n == 0)
+	{
+		str[0] = '0';
+		return (str);
+	}
+	else
+	{
+		free(str);
+		str = ft_strdup("-9223372036854775808");
+		return (str);
+	}
 }
 
 char			*ft_lltoa(long long n)
@@ -50,10 +59,9 @@ char			*ft_lltoa(long long n)
 	{
 		nbr = -nbr;
 		result[0] = '-';
-		++i;
 	}
-	if (n == 0)
-		return (nzero_ll(result));
+	if (n == 0 || n == -9223372036854775807 - 1)
+		return (nzero_ll(result, n));
 	while (nbr != 0)
 	{
 		result[ft_len(n) - i + neg - 1] = (nbr % 10) + '0';
