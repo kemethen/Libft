@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kemethen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 10:14:52 by kemethen          #+#    #+#             */
-/*   Updated: 2018/11/14 11:01:56 by kemethen         ###   ########.fr       */
+/*   Created: 2019/04/05 18:41:05 by kemethen          #+#    #+#             */
+/*   Updated: 2019/04/05 18:41:24 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c)
 {

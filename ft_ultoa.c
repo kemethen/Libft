@@ -5,31 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/27 17:16:42 by kemethen          #+#    #+#             */
-/*   Updated: 2019/02/27 17:20:57 by kemethen         ###   ########.fr       */
+/*   Created: 2019/04/03 14:01:44 by kemethen          #+#    #+#             */
+/*   Updated: 2019/04/15 15:00:32 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-static int		ft_len(int n)
+static int		ft_len(unsigned long n)
 {
-	long int	nbr;
-	int			i;
+	unsigned long	nbr;
+	int				i;
 
 	nbr = n;
 	i = 0;
-	if (nbr < 0)
-		nbr = nbr * -1;
-	while (nbr / 10 > 9)
+	if (nbr == 0)
+		return (1);
+	while (nbr != 0)
 	{
-		i++;
+		++i;
 		nbr = nbr / 10;
 	}
-	if (n < 0)
-		return (i + 2);
-	else
-		return (i + 1);
+	return (i);
+}
+
+char			*nzeroul(char *str)
+{
+	str[0] = '0';
+	return (str);
 }
 
 char			*ft_ultoa(unsigned long n)
@@ -40,14 +43,14 @@ char			*ft_ultoa(unsigned long n)
 
 	nbr = n;
 	i = 0;
-	if (!(result = (char *)malloc(sizeof(char) * ft_len(n) + 1)))
-		return (NULL);
-	while ((ft_len(n) - i) > 0 && n != 0 && nbr > 9)
+	result = ft_strnew(ft_len(n));
+	if (n == 0)
+		return (nzeroul(result));
+	while (i < ft_len(n))
 	{
-		result[ft_len(n) - i] = (nbr % 10) + '0';
+		result[ft_len(n) - i - 1] = (nbr % 10) + '0';
 		nbr = nbr / 10;
-		i++;
+		++i;
 	}
-	result[ft_len(n) + 1] = '\0';
 	return (result);
 }
