@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 18:41:37 by kemethen          #+#    #+#             */
-/*   Updated: 2019/04/15 14:58:18 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/05/23 14:07:31 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	char	*s2;
 	size_t	i;
 
-	if (s == NULL || (len + start) > ft_strlen(s))
+	if (s == NULL)
 		return (NULL);
 	if (!(s2 = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);

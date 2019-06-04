@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 12:03:20 by kemethen          #+#    #+#             */
-/*   Updated: 2019/04/18 18:51:14 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/05/29 11:36:18 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,8 +123,10 @@ int		ft_printf(const char *str, ...)
 	v = ft_memalloc(sizeof(t_var));
 	ft_bzero(v, sizeof(t_var));
 	va_start(ap, str);
+	v->tab = malloc(sizeof(int) * 3000);
 	len = check(str, ap, v);
 	va_end(ap);
+	free(v->tab);
 	free(v);
 	return (len);
 }
