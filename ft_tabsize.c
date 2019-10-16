@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_displaytab.c                                    :+:      :+:    :+:   */
+/*   ft_tabsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 12:10:37 by kemethen          #+#    #+#             */
-/*   Updated: 2019/06/11 15:19:45 by kemethen         ###   ########.fr       */
+/*   Created: 2019/06/06 14:54:25 by kemethen          #+#    #+#             */
+/*   Updated: 2019/06/11 15:19:42 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_displaytab(char **tab)
+size_t	ft_tabsize(char **tab)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (tab[i] != NULL)
-	{
-		ft_printf("tab[%d] = %s\n", i, tab[i]);
 		++i;
-	}
+	return (i);
 }

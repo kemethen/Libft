@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_displaytab.c                                    :+:      :+:    :+:   */
+/*   ft_tabdupint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 12:10:37 by kemethen          #+#    #+#             */
-/*   Updated: 2019/06/11 15:19:45 by kemethen         ###   ########.fr       */
+/*   Created: 2019/07/08 16:08:09 by kemethen          #+#    #+#             */
+/*   Updated: 2019/10/12 16:11:36 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_displaytab(char **tab)
+int		*ft_tabdupint(int *t1, int size)
 {
+	int		*t2;
 	int		i;
 
 	i = 0;
-	while (tab[i] != NULL)
+	if (!(t2 = (int *)malloc(sizeof(int) * size)))
+		return (NULL);
+	while (i < size)
 	{
-		ft_printf("tab[%d] = %s\n", i, tab[i]);
-		++i;
+		t2[i] = t1[i];
+		i++;
 	}
+	return (t2);
 }

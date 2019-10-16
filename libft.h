@@ -6,12 +6,13 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 10:02:24 by kemethen          #+#    #+#             */
-/*   Updated: 2019/06/04 11:10:21 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/10/13 11:46:59 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 10999
 
 # include <string.h>
 # include <unistd.h>
@@ -215,5 +216,12 @@ char			*ft_realloc(char *str, size_t size);
 char			*ft_ultoa(unsigned long n);
 char			*ft_uitoa(unsigned int n);
 char			*ft_lltoa(long long n);
+size_t			ft_tabsize(char **tab);
+char			**ft_tabdup(char **t1);
+char			**ft_tabnew(size_t size);
+void			ft_freetab(char **tab);
+void			ft_displaytabint(int *tab, size_t size);
+int				*ft_tabdupint(int *t1, int size);
+int				get_next_line(int const fd, char **line);
 
 #endif

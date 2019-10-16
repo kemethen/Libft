@@ -6,7 +6,7 @@
 /*   By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 19:31:25 by kemethen          #+#    #+#             */
-/*   Updated: 2019/04/15 14:49:22 by kemethen         ###   ########.fr       */
+/*   Updated: 2019/10/13 11:55:29 by kemethen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_atoi(const char *str)
 {
 	int		i;
-	size_t	nbr;
+	long	nbr;
 	int		negatif;
 
 	i = 0;
@@ -25,17 +25,17 @@ int		ft_atoi(const char *str)
 		i++;
 	if (str[i] == 45)
 		negatif = 1;
-	if (str[i] == 43 || str[i] == 45)
+	if (str[i] == 45 && (str[i + 1] >= 48 && str[i + 1] <= 57))
 		i++;
 	while ((str[i] >= 48) && (str[i] <= 57))
 	{
 		nbr = nbr * 10 + str[i] - 48;
-		if (negatif == 0 && nbr > __INT64_MAX__)
-			return (-1);
-		if (negatif == 1 && nbr > (size_t)(__INT64_MAX__) + 1)
-			return (0);
+		if (nbr > 2147483647 || nbr <= -2147483649)
+			return (-2147483645);
 		i++;
 	}
+	if ((str[i] < 48 || str[i] > 57) && str[i] != '\0')
+		return (-2147483645);
 	if (negatif == 1)
 		return (-nbr);
 	return (nbr);

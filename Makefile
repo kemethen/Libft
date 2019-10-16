@@ -6,7 +6,7 @@
 #    By: kemethen <kemethen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/11 12:07:01 by kemethen          #+#    #+#              #
-#    Updated: 2019/06/04 11:53:52 by kemethen         ###   ########.fr        #
+#    Updated: 2019/10/13 10:27:11 by kemethen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ HEAD	= libft.h
 SRC		= ft_atoi.c \
 	ft_bzero.c \
 	ft_displaytab.c \
+	ft_displaytabint.c \
 	ft_doop.c \
+	ft_freetab.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -92,11 +94,16 @@ SRC		= ft_atoi.c \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c \
+	ft_tabdup.c \
+	ft_tabdupint.c \
 	ft_tabjoin.c \
+	ft_tabnew.c \
+	ft_tabsize.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_uitoa.c \
 	ft_ultoa.c \
+	get_next_line.c \
 	percent_csdi.c \
 	percent_f.c \
 	percent_h.c \
@@ -144,7 +151,7 @@ $(OBJDIR):
 	@mkdir $@
 
 clean:
-	@echo "$(RED)Deleting\t$(WHITE)directory $(BLUE)'$(OBJDIR)'"
+	@echo "$(RED)Deleting\t$(WHITE)directory $(BLUE)'$(OBJDIR)' in libft"
 	@rm -rf $(OBJDIR)
 
 fclean: clean
